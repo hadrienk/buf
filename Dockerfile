@@ -32,6 +32,7 @@ ARG BUF_VERSION=1.3.1
 FROM bufbuild/buf:1.3.1
 
 RUN apk add --no-cache unzip
+RUN apk add --no-cache gcompat
 
 # See https://github.com/protocolbuffers/protobuf/releases
 ARG PROTOBUF_VERSION=3.20.0
