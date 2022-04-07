@@ -50,5 +50,4 @@ COPY --from=go /go/bin/protoc-gen-go /usr/local/bin/
 COPY --from=go /go/bin/protoc-gen-go-grpc /usr/local/bin/
 COPY --from=java /go/bin/protoc-gen-grpc-java /usr/local/bin/
 
-RUN chmod -R -x /usr/local/bin/
-RUN ls -al /usr/local/bin/
+RUN chmod -R +x /usr/local/bin/
