@@ -38,7 +38,6 @@ ARG PROTOBUF_VERSION=3.20.0
 ARG PROTOBUF_PLATFORM=linux-x86_64
 ARG PROTOBUF_URL="https://github.com/protocolbuffers/protobuf/releases/download/v$PROTOBUF_VERSION/protoc-$PROTOBUF_VERSION-$PROTOBUF_PLATFORM.zip"
 
-# See https://github.com/protocolbuffers/protobuf/releases
 RUN echo "Installing protoc-$PROTOBUF_VERSION-$PROTOBUF_PLATFORM" && \
     wget --quiet $PROTOBUF_URL -O protoc.zip && \
     unzip protoc.zip -d protoc && \
