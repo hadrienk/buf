@@ -1,4 +1,7 @@
-#TODO Handle platforms
+# TODO Handle platforms
+# TODO One day if the grpc are release by version we could use this to downlaod the correct versions.
+#  > git ls-remote --tags git@github.com:grpc/grpc.git v1.9.1 | cut -f1
+#  > wget https://packages.grpc.io/# -O - | xmllint --xpath 'packages/builds/build[@commit="a3b54ef90841ec45fe5e28f54245b7944d0904f9"]' -
 
 # Go compilers
 FROM golang:1.18-alpine AS go
@@ -49,7 +52,3 @@ COPY --from=java /go/bin/protoc-gen-grpc-java /usr/local/bin/
 
 RUN chmod -R -x /usr/local/bin/
 RUN ls -al /usr/local/bin/
-
-# TODO One day if the grpc are release by version we could use this to downlaod the correct versions.
-# git ls-remote --tags git@github.com:grpc/grpc.git v1.9.1 | cut -f1
-# wget https://packages.grpc.io/# -O - | xmllint --xpath 'packages/builds/build[@commit="a3b54ef90841ec45fe5e28f54245b7944d0904f9"]' -
